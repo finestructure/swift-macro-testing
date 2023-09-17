@@ -18,7 +18,7 @@ final class FontLiteralMacroTests: BaseTestCase {
 
       let _: Font = #fontLiteral(name: "Comic Sans", size: 14, weight: .thin)
       """
-    } matches: {
+    } expandsTo: {
       """
       struct Font: ExpressibleByFontLiteral {
         init(fontLiteralName: String, size: Int, weight: MacroExamplesLib.FontWeight) {

@@ -18,7 +18,7 @@ final class MetaEnumMacroTests: BaseTestCase {
         case null
       }
       """#
-    } matches: {
+    } expandsTo: {
       """
       enum Value {
         case integer(Int)
@@ -58,7 +58,7 @@ final class MetaEnumMacroTests: BaseTestCase {
         case boolean(Bool)
       }
       """
-    } matches: {
+    } expandsTo: {
       """
       public enum Cell {
         case integer(Int)
@@ -94,7 +94,7 @@ final class MetaEnumMacroTests: BaseTestCase {
         let boolean: Bool
       }
       """
-    } matches: {
+    } diagnoses: {
       """
       @MetaEnum struct Cell {
       ┬────────

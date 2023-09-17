@@ -13,11 +13,15 @@ final class WarningMacroTests: BaseTestCase {
       #"""
       #myWarning("remember to pass a string literal here")
       """#
-    } matches: {
+    } diagnoses: {
       """
       #myWarning("remember to pass a string literal here")
       ┬───────────────────────────────────────────────────
       ╰─ ⚠️ remember to pass a string literal here
+      """
+    } expandsTo: {
+      """
+      ()
       """
     }
   }
@@ -28,7 +32,7 @@ final class WarningMacroTests: BaseTestCase {
       let text = "oops"
       #myWarning(text)
       """
-    } matches: {
+    } diagnoses: {
       """
       let text = "oops"
       #myWarning(text)

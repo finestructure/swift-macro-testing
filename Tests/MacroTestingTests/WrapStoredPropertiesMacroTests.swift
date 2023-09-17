@@ -16,7 +16,7 @@ final class WrapStoredPropertiesMacroTests: BaseTestCase {
         var x: Int
       }
       """
-    } matches: {
+    } expandsTo: {
       """
       struct OldStorage {
         @available(*, deprecated, message: "hands off my data")

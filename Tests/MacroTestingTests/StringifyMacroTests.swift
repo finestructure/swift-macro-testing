@@ -15,7 +15,7 @@ final class StringifyMacroTests: BaseTestCase {
       let y = 2
       print(#stringify(x + y))
       """#
-    } matches: {
+    } expandsTo: {
       """
       let x = 1
       let y = 2
